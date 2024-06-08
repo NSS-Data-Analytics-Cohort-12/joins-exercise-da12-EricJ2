@@ -1,0 +1,36 @@
+-- -- 1. select specs.movie_id,
+-- -- 		specs.film_title,
+-- -- 		specs.release_year,
+-- -- 		revenue.worldwide_gross
+-- -- from specs
+-- -- left join revenue
+-- -- 	on specs.domestic_distributor_id = revenue.movie_id
+-- -- ORDER BY revenue.worldwide_gross DESC;
+
+
+-- 2. 
+-- select s.release_year, 
+-- 	AVG(r.imdb_rating) as avg_rating
+-- from specs as s
+-- 	join rating as r 
+-- 	on s.movie_id = r.movie_id
+-- group by s.release_year
+-- order by avg_rating DESC
+-- LIMIT 1;
+
+-- --1991	7.4500000000000000
+
+-- 3.
+-- SELECT s.movie_id,
+-- 		s.film_title,
+-- 		s.mpaa_rating,
+-- 		d.company_name,
+-- 		r.worldwide_gross
+-- FROM specs as s
+-- join distributors as d
+-- on s.domestic_distributor_id = d.distributor_id
+-- join revenue as r
+-- on s.movie_id = r.movie_id
+-- where s.mpaa_rating = 'G'
+
+--"Toy Story 4"	"G"
